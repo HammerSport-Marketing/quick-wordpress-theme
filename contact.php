@@ -6,6 +6,7 @@
  * @subpackage Quick Ui Kit
  * @since Quick Ui Kit
  */
+
 get_header();?>
 <main>
         <!-- Main content -->
