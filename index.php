@@ -6,8 +6,8 @@ else :
 endif;
 ?>
 
-   <main>
-           <!-- Main content -->
+<main>
+    <!-- Main content -->
     <section class="slice slice-lg py-7 bg-cover bg-size--cover" style="background-image: url(../../assets/img/backgrounds/img-5.jpg);">
         <span class="mask bg-dark opacity-8"></span>
         <div class="container d-flex align-items-center" data-offset-top="#navbar-main">
@@ -47,7 +47,7 @@ endif;
                     </ul>
                 </div>
                 <div class="col-lg-5">
-               <?php get_search_form( ); ?>
+                    <?php get_search_form(); ?>
                 </div>
             </div>
         </div>
@@ -55,49 +55,57 @@ endif;
     <section class="slice pt-5 pb-7 bg-section-secondary">
         <div class="container">
             <div class="row">
-                <?php if(have_posts()): $i = 0;
-                while(have_posts()): the_post(); ?>
-                <div class="col-xl-4 col-md-6">
-                    <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                            <a href="<?php the_permalink(); ?>" class="d-block">
-                        <?php if(has_post_thumbnail()):
-                            $urlImg = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
-                            ?>
-                                <img alt="Image placeholder" src="<?php echo $urlImg?>" class="card-img-top">
-                                <?php endif ?>
-                            </a>
-                        </div>
-                        <div class="card-body py-4">
-                            <small class="d-block text-sm mb-2"><?php the_time('F j, Y'); ?></small>
-                            <a href="<?php the_permalink(); ?>" class="h5 stretched-link lh-150"><?php the_title()?></a>
-                            <p class="mt-3 mb-0 lh-170"><?php the_excerpt(); ?></p>
-                        </div>
-                        <div class="card-footer border-0 delimiter-top">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <!-- <span class="avatar avatar-sm bg-primary rounded-circle"><?php echo wp_list_categories() ?></span> -->
-                                    <span class="text-sm mb-0 avatar-content">Author: <?php the_author_posts_link(); ?></span>
+                <?php if (have_posts()) : $i = 0;
+                    while (have_posts()) : the_post(); ?>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
+                                <div class="position-relative overflow-hidden">
+                                    <a href="<?php the_permalink(); ?>" class="d-block">
+                                        <?php if (has_post_thumbnail()) :
+                                            $urlImg = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
+                                        ?>
+                                            <img alt="Image placeholder" src="<?php echo $urlImg ?>" class="card-img-top">
+                                        <?php endif ?>
+                                    </a>
                                 </div>
-                                <!-- <div class="col text-right text-right">
+                                <div class="card-body py-4">
+                                    <small class="d-block text-sm mb-2"><?php the_time('F j, Y'); ?></small>
+                                    <a href="<?php the_permalink(); ?>" class="h5 stretched-link lh-150"><?php the_title() ?></a>
+                                    <p class="mt-3 mb-0 lh-170"><?php the_excerpt(); ?></p>
+                                </div>
+                                <div class="card-footer border-0 delimiter-top">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <!-- <span class="avatar avatar-sm bg-primary rounded-circle"><?php echo wp_list_categories() ?></span> -->
+                                            <span class="text-sm mb-0 avatar-content">Author: <?php the_author_posts_link(); ?></span>
+                                        </div>
+                                        <!-- <div class="col text-right text-right">
                                     <div class="actions">
                                         <a href="#" class="action-item"><i data-feather="heart" class="mr-1"></i> 50</a>
                                         <a href="#" class="action-item"><i data-feather="eye" class=" mr-1"></i> 250</a>
                                     </div>
                                 </div> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <?php endwhile; 
-                endif;
-                ?>
+                    <?php endwhile; 
+                    endif;
+                    ?>
             </div>
             <!-- Load more -->
             <div class="mt-4 text-center">
-                <a href="<?php posts_nav_link();?>" class="btn btn-neutral hover-translate-y-n3">Load more poop</a>
+            <?php echo paginate_links(); ?> 
             </div>
         </div>
     </section>
-   </main>
-    <?php get_footer(); ?>
+</main>
+<?php get_footer(); 
+echo"<script>
+const links = document.querySelectorAll('.page-numbers')
+links.forEach(link => {
+    link.classList.add('btn','btn-neutral','hover-translate-y-n3');
+});
+</script>";
+
+?>
