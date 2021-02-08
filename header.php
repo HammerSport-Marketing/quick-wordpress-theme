@@ -96,15 +96,9 @@
         <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark" id="navbar-main">
             <div class="container">
                 <!-- Brand -->
-                <?php if (has_custom_logo()) :?>
-                    <?php 
-                        $custom_logo_id = get_theme_mod( 'custom_logo' );
-                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                    ?>
-                    <a class="navbar-brand" href="/">
-                        <img src="<?php echo $image[0]; ?>" alt="Logo" id="navbar-logo">
-                    </a>
-                <?php endif; ?>
+                <a class="navbar-brand" href="/">
+                    <img alt="Image placeholder" src="<?php echo get_theme_file_uri('/src/assets/img/brand/light-mono.svg'); ?>" id="navbar-logo">
+                </a>
                 <!-- Toggler -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -126,20 +120,20 @@
                     )); ?>
                 <?php } ?>
                     <!-- Right navigation -->
-                    <!-- <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto"> -->
+                    <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
                         <!-- Auth -->
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="../../pages/authentication/login-basic.html" class="btn btn-sm btn-white btn-icon ml-3">
-                                Log in
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../pages/authentication/login-basic.html">
+                                Sign in
                             </a>
-                        </li> -->
-                        <!-- <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                             <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/" class="btn btn-sm btn-white btn-icon ml-3" target="_blank">
                                 <span class="btn-inner--icon"><i data-feather="shopping-bag"></i></span>
                                 <span class="btn-inner--text">Buy now</span>
                             </a>
-                        </li> -->
-                    <!-- </ul> -->
+                        </li>
+                    </ul>
                     <!-- Mobile button -->
                     <!-- <div class="d-lg-none px-4 text-center">
                         <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/" class="btn btn-block btn-sm btn-primary" target="_blank">Purchase now</a>
@@ -211,4 +205,4 @@
         #navbar-main-collapse.show > ul > li > a > span, #navbar-main-collapse.show > ul > li > ul> li> a > span {
             color: white;
         }
-    </style>
+      </style>
