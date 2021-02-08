@@ -1,8 +1,13 @@
 <?php
 get_header();?>
 <main>
+    <?php if(have_posts()) : ?>
+      <?php while(have_posts()) : the_post(); ?>  
         <!-- Main content -->
-        <section class="slice slice-lg pt-17 pb-0 bg-cover bg-size--cover" style="background-image: url(../../assets/img/theme/light/blog-hero-1.jpg)">
+        <section class="slice slice-lg pt-17 pb-0 bg-cover bg-size--cover" style="background-image: url('<?php 
+        if( get_post_thumbnail_id() == false) : 
+            echo get_theme_file_uri( '/src/assets/img/theme/light/blog-hero-1.jpg'); 
+            else : echo get_the_post_thumbnail_url( );  endif; ?>')">
         <!-- Container -->
         <div class="container">
             <div class="row justify-content-center">
@@ -13,7 +18,7 @@ get_header();?>
                                 <!-- Badge -->
                                 <a href="#" class="badge badge-warning badge-pill">Bootstrap</a>
                                 <!-- Heading -->
-                                <h1 class="h2 lh-150 mt-3 mb-0">Keep your face always toward the sunshine - and shadows will fall behind you.</h1>
+                                <h1 class="h2 lh-150 mt-3 mb-0"><?php the_title();?></h1>
                             </div>
                             <!-- Share -->
                             <div class="row align-items-center mt-5 pt-5 delimiter-top">
@@ -21,12 +26,12 @@ get_header();?>
                                     <div class="media align-items-center">
                                         <div>
                                             <a href="#" class="avatar rounded-circle mr-3">
-                                                <img alt="Image placeholder" src="../../assets/img/theme/light/person-2.jpg">
+                                                <img alt="Image placeholder" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/person-2.jpg');?>">
                                             </a>
                                         </div>
                                         <div class="media-body">
-                                            <span class="d-block h6 mb-0">John Sullivan</span>
-                                            <span class="text-sm text-muted">Published on July 25, 2019</span>
+                                            <span class="d-block h6 mb-0"><?php the_author();?></span>
+                                            <span class="text-sm text-muted"><?php the_time('F j, Y'); ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -62,184 +67,7 @@ get_header();?>
             <div class="row row-grid align-items-center">
                 <div class="col-xl-8 col-lg-10 offset-xl-2 offset-lg-1">
                     <article>
-                        <!-- Text -->
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <!-- Text -->
-                        <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                        </p>
-                        <!-- Heading -->
-                        <h5>This is a secondary heading</h5>
-                        <!-- Text -->
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <!-- Image -->
-                        <figure class="figure">
-                            <a href="../../assets/img/theme/light/blog-1-800x600.jpg" data-fancybox>
-                                <img alt="Image placeholder" src="../../assets/img/theme/light/blog-1-800x600.jpg" class="img-fluid rounded hover-translate-y-n3 hover-shadow-lg">
-                            </a>
-                            <figcaption class="mt-3 text-muted text-sm text-center">Figure one: Type here your description</figcaption>
-                        </figure>
-                        <!-- Heading -->
-                        <h5 class="h3">This is a primary heading</h5>
-                        <!-- Text -->
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <!-- List -->
-                        <ul class="list-unstyled list-bullet">
-                            <li class="py-2">
-                                <span class="badge badge-circle rounded-circle badge-soft-success mr-2"><i data-feather="check"></i></span>
-                                Design websites, layouts, app interfaces and more
-                            </li>
-                            <li class="py-2">
-                                <span class="badge badge-circle rounded-circle badge-soft-success mr-2"><i data-feather="check"></i></span>
-                                Help to build/code/assemble these things
-                            </li>
-                            <li class="py-2">
-                                <span class="badge badge-circle rounded-circle badge-soft-success mr-2"><i data-feather="check"></i></span>
-                                Use WordPress, a lot
-                            </li>
-                            <li class="py-2">
-                                <span class="badge badge-circle rounded-circle badge-soft-success mr-2"><i data-feather="check"></i></span>
-                                Collaborate closely with your team members
-                            </li>
-                            <li class="py-2">
-                                <span class="badge badge-circle rounded-circle badge-soft-success mr-2"><i data-feather="check"></i></span>
-                                Always learn somthing new
-                            </li>
-                        </ul>
-                        <!-- Heading -->
-                        <h5>1. This is a secondary heading</h5>
-                        <!-- Image -->
-                        <figure class="figure">
-                            <a href="../../assets/img/theme/light/blog-1-800x600.jpg" data-fancybox>
-                                <img alt="Image placeholder" src="../../assets/img/theme/light/blog-2-800x600.jpg" class="img-fluid rounded hover-translate-y-n3 hover-shadow-lg">
-                            </a>
-                            <figcaption class="mt-3 text-muted text-sm text-center">Figure two: Type here your description</figcaption>
-                        </figure>
-                        <!-- Text -->
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <!-- Testimonials -->
-                        <div class="card bg-dark my-5">
-                            <div class="card-body py-5 px-lg-5 swiper-js-container">
-                                <div class="swiper-container" data-swiper-items="1" data-swiper-space-between="0">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="text-center">
-                                                <p class="h4 lh-180 px-4 font-weight-300 text-white">
-                                                    "Amazing looking theme and instantly turns your application into a professional looking one. Really shows that professionals have built this theme up. Very happy with the way the theme looks and the example
-                                                    pages are very good."
-                                                </p>
-                                                <div class="text-center mt-4">
-                                                    <span class="h6 font-weight-light text-white opacity-8">Saif</span>
-                                                    <span class="h6 text-warning"> - Bootstrap Marketplace</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="text-center">
-                                                <p class="h4 lh-180 px-4 font-weight-300 text-white">
-                                                    "I have worked with different themes, but this one stands out in terms of beautiful organization. The theme also has many example pages and a host of components to choose from. Can't thank you enough!"
-                                                </p>
-                                                <div class="text-center mt-4">
-                                                    <span class="h6 font-weight-light text-white">Nelson</span>
-                                                    <span class="h6 text-warning"> - Bootstrap Marketplace</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="text-center">
-                                                <p class="h4 lh-180 px-4 font-weight-300 text-white">
-                                                    "What I really appreciate about this <strong>Pack</strong> is the fact that it contains hundreds of different opportunities to create beautiful webpages. I would start use this more and more!"
-                                                </p>
-                                                <div class="text-center mt-4">
-                                                    <span class="h6 font-weight-light text-white">Mathias</span>
-                                                    <span class="h6 text-warning"> - Bootstrap Marketplace</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-button swiper-button-next btn-dark zindex-101"></div>
-                                <div class="swiper-button swiper-button-prev btn-dark zindex-101"></div>
-                            </div>
-                        </div>
-                        <!-- Heading -->
-                        <h5>2. This is a secondary heading</h5>
-                        <!-- Text -->
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <!-- Milestones -->
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
-                                    <div class="p-4 text-center">
-                                        <div class="icon bg-warning text-white rounded-circle icon-shape">
-                                            <i data-feather="dollar-sign"></i>
-                                        </div>
-                                        <h3 class="mt-3 mb-0">
-                                            <span class="counter font-weight-bolder" data-from="0" data-to="10" data-speed="3000" data-refresh-interval="200"></span>
-                                            <span class="counter-extra">k</span>
-                                        </h3>
-                                        <p class="text-muted mb-0">
-                                            Customers
-                                        </p>
-                                        <span class="d-sm-block pl-2 text-success">
-                                            30%
-                                            <small data-feather="chevron-up"></small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
-                                    <div class="p-4 text-center">
-                                        <div class="icon bg-danger text-white rounded-circle icon-shape">
-                                            <i data-feather="download"></i>
-                                        </div>
-                                        <h3 class="mt-3 mb-0">
-                                            <span class="counter font-weight-bolder" data-from="0" data-to="53" data-speed="3000" data-refresh-interval="200"></span>
-                                            <span class="counter-extra">k</span>
-                                        </h3>
-                                        <p class="text-muted mb-0">
-                                            Downloads
-                                        </p>
-                                        <span class="d-sm-block pl-2 text-success">
-                                            50%
-                                            <small data-feather="chevron-up"></small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
-                                    <div class="p-4 text-center">
-                                        <div class="icon bg-success text-white rounded-circle icon-shape">
-                                            <i data-feather="users"></i>
-                                        </div>
-                                        <h3 class="mt-3 mb-0">
-                                            <span class="counter font-weight-bolder" data-from="0" data-to="98" data-speed="3000" data-refresh-interval="200"></span>
-                                            <span class="counter-extra">%</span>
-                                        </h3>
-                                        <p class="text-muted mb-0">
-                                            Happy users
-                                        </p>
-                                        <span class="d-sm-block pl-2 text-success">
-                                            100%
-                                            <small data-feather="chevron-up"></small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      <?php the_content(); ?>
                     </article>
                     <!-- Share -->
                     <div class="row align-items-center mt-7 py-4 border-top border-bottom">
@@ -247,12 +75,12 @@ get_header();?>
                             <div class="media align-items-center">
                                 <div>
                                     <a href="#" class="avatar rounded-circle mr-3">
-                                        <img alt="Image placeholder" src="../../assets/img/theme/light/person-2.jpg">
+                                        <img alt="Image placeholder" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/person-2.jpg');?>">
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <span class="d-block h6 mb-0">John Sullivan</span>
-                                    <span class="text-sm text-muted">Published on July 25, 2019</span>
+                                    <span class="d-block h6 mb-0"><?php the_author();?></span>
+                                    <span class="text-sm text-muted"><?php the_time('F j, Y'); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +103,7 @@ get_header();?>
                         <h6 class="mb-4">Comments</h6>
                         <!-- Comment entry -->
                         <div class="media media-comment">
-                            <img alt="Image placeholder" class="rounded-circle shadow mr-4" src="../../assets/img/theme/light/person-3.jpg" style="width: 58px;">
+                            <img alt="Image placeholder" class="rounded-circle shadow mr-4" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/person-3.jpg');?>" style="width: 58px;">
                             <div class="media-body">
                                 <div class="media-comment-bubble left-top">
                                     <h6 class="mt-0">Alexis Ren</h6>
@@ -294,7 +122,7 @@ get_header();?>
                             </div>
                         </div>
                         <div class="media media-comment">
-                            <img alt="Image placeholder" class="rounded-circle shadow mr-4" src="../../assets/img/theme/light/person-4.jpg" style="width: 58px;">
+                            <img alt="Image placeholder" class="rounded-circle shadow mr-4" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/person-4.jpg');?>" style="width: 58px;">
                             <div class="media-body">
                                 <div class="media-comment-bubble left-top">
                                     <h6 class="mt-0">Tom Cruise</h6>
@@ -313,7 +141,7 @@ get_header();?>
                             </div>
                         </div>
                         <div class="media media-comment align-items-center">
-                            <img alt="Image placeholder" class="rounded-circle shadow mr-4" src="../../assets/img/theme/light/person-1.jpg" style="width: 58px;">
+                            <img alt="Image placeholder" class="rounded-circle shadow mr-4" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/person-1.jpg');?>" style="width: 58px;">
                             <div class="media-body">
                                 <form class="rounded-lg border">
                                     <div class="input-group input-group-lg input-group-merge">
@@ -341,9 +169,11 @@ get_header();?>
         </div>
         <!-- SVG separator -->
         <div class="shape-container shape-position-bottom">
-            <img alt="Image placeholder" src="../../assets/img/svg/separators/line.svg" class="svg-inject fill-section-secondary">
+            <img alt="Image placeholder" src="<?php echo get_theme_file_uri( '/src/assets/img/svg/separators/line.svg');?>" class="svg-inject fill-section-secondary">
         </div>
     </section>
+    <?php endwhile; ?>
+    <?php endif; ?>
     <section class="slice slice-lg bg-section-secondary">
         <div class="container">
             <!-- Title -->
@@ -366,7 +196,7 @@ get_header();?>
                     <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
                         <div class="position-relative overflow-hidden">
                             <a href="#" class="d-block">
-                                <img alt="Image placeholder" src="../../assets/img/theme/light/blog-1-800x600.jpg" class="card-img-top">
+                                <img alt="Image placeholder" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/blog-1-800x600.jpg');?>" class="card-img-top">
                             </a>
                         </div>
                         <div class="card-body py-4">
@@ -394,7 +224,7 @@ get_header();?>
                     <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
                         <div class="position-relative overflow-hidden">
                             <a href="#" class="d-block">
-                                <img alt="Image placeholder" src="../../assets/img/theme/light/blog-2-800x600.jpg" class="card-img-top">
+                                <img alt="Image placeholder" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/blog-2-800x600.jpg');?>" class="card-img-top">
                             </a>
                         </div>
                         <div class="card-body py-4">
@@ -422,7 +252,7 @@ get_header();?>
                     <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
                         <div class="position-relative overflow-hidden">
                             <a href="#" class="d-block">
-                                <img alt="Image placeholder" src="../../assets/img/theme/light/blog-3-800x600.jpg" class="card-img-top">
+                                <img alt="Image placeholder" src="<?php echo get_theme_file_uri( '/src/assets/img/theme/light/blog-3-800x600.jpg');?>" class="card-img-top">
                             </a>
                         </div>
                         <div class="card-body py-4">
