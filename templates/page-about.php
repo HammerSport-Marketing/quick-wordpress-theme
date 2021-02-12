@@ -1,16 +1,17 @@
 <?php
 
 /**
- * Template Name: About page
+ * Template Name: About Page
  *
  * @package HammerSport
  * @subpackage Quick Ui Kit
  * @since Quick Ui Kit
  */
-get_header();
-?>
-<!-- Main content -->
-<section class="slice py-8 bg-dark bg-cover bg-size--cover" style="background-image: url(../../assets/img/backgrounds/img-1.jpg);">
+get_header(); ?>
+<main>
+    <!-- Main content -->
+    <section class="slice py-8 bg-dark bg-cover bg-size--cover"
+        style="background-image: url('<?php the_field('header_background'); ?>');">
         <!-- Mask -->
         <span class="mask bg-gradient-dark opacity-9"></span>
         <!-- Container -->
@@ -20,28 +21,33 @@ get_header();
                     <div class="col-lg-8 text-center text-lg-left">
                         <!-- Heading -->
                         <h1 class="text-white mb-4">
-                            We built incredible web products for designers &amp; developers
+                            <?php the_field('headline'); ?>
                         </h1>
                         <!-- Text -->
                         <p class="lead text-white opacity-8">
-                            For over 5 years, we pride ourselves on our commitment to excellence, as well as our ability to deliver for our customers.
+                            <?php the_field('subheadline'); ?>
                         </p>
                         <!-- Buttons -->
+                        <?php
+                        if (get_field('header_call_to_action')) { ?>
                         <div class="mt-5">
                             <a href="#" class="btn btn-warning btn-lg btn-icon">
                                 <span class="btn-inner--icon">
                                     <i data-feather="edit-3"></i>
                                 </span>
-                                <span class="btn-inner--text">Contact us</span>
+                                <span class="btn-inner--text"><?php echo the_field('header_call_to_action') ?></span>
                             </a>
                         </div>
+                        <?php        } ?>
                     </div>
                 </div>
             </div>
         </div>
         <!-- SVG separator -->
         <div class="shape-container shape-line shape-position-bottom">
-            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px"
+                viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
                 <polygon points="2560 0 2560 100 0 100"></polygon>
             </svg>
         </div>
@@ -52,16 +58,22 @@ get_header();
             <div class="row mt-4">
                 <div class="col-lg-6 pr-lg-5">
                     <p class="h5 lh-180 mb-3">
-                        Our vision is to build the most efficient and intuitive UI stuff on the web in order to give developers some amazing possibilities to create high quality digital products with less time and money spent.
+                        Our vision is to build the most efficient and intuitive UI stuff on the web in order to give
+                        developers some amazing possibilities to create high quality digital products with less time and
+                        money spent.
                     </p>
                 </div>
                 <div class="col-lg-6">
                     <p class="lead lh-180">
-                        She exposed painted fifteen are noisier mistake led waiting. Surprise not wandered speedily husbands although yet end. Are court tiled cease young built fat one man taken. We highest ye friends is exposed equally in. Ignorant had
+                        She exposed painted fifteen are noisier mistake led waiting. Surprise not wandered speedily
+                        husbands although yet end. Are court tiled cease young built fat one man taken. We highest ye
+                        friends is exposed equally in. Ignorant had
                         too strictly followed.
                     </p>
                     <p class="lead lh-180">
-                        Form face evening above years for i fruitful us creature void days. Upon upon fruitful us fill earth was set tree above yielding to air image cattle seed night lesser saying. Gathered, fourth wherein air.
+                        Form face evening above years for i fruitful us creature void days. Upon upon fruitful us fill
+                        earth was set tree above yielding to air image cattle seed night lesser saying. Gathered, fourth
+                        wherein air.
                     </p>
                 </div>
             </div>
@@ -71,15 +83,19 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-6">
-                    <img src="../../assets/img/theme/light/img-v-4.jpg" alt="Image" class="rounded-lg img-fluid" />
+                    <img src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/img-v-4.jpg'); ?>" alt="Image"
+                        class="rounded-lg img-fluid" />
                     <div class="text-right mt-4">
-                        <img src="../../assets/img/theme/light/img-1-1000x1000.jpg" alt="Image" class="rounded-lg img-fluid w-50" />
+                        <img src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/img-1-1000x1000.jpg'); ?>"
+                            alt="Image" class="rounded-lg img-fluid w-50" />
                     </div>
                 </div>
                 <div class="col-lg-7 col-6">
-                    <img src="../../assets/img/theme/light/img-1-1000x800.jpg" alt="Image" class="rounded-lg img-fluid w-75" />
+                    <img src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/img-1-1000x800.jpg'); ?>"
+                        alt="Image" class="rounded-lg img-fluid w-75" />
                     <div class="text-right mt-4">
-                        <img src="../../assets/img/theme/light/img-2-1000x800.jpg" alt="Image" class="rounded-lg img-fluid" />
+                        <img src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/img-2-1000x800.jpg'); ?>"
+                            alt="Image" class="rounded-lg img-fluid" />
                     </div>
                 </div>
             </div>
@@ -88,7 +104,9 @@ get_header();
     <section class="slice slice-lg pt-10 bg-primary">
         <!-- SVG separator -->
         <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
-            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px"
+                viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
                 <polygon points="2560 0 2560 100 0 100"></polygon>
             </svg>
         </div>
@@ -102,7 +120,9 @@ get_header();
                     <h2 class="my-4 text-white">Websites, Dashboards and Web Apps</h2>
                     <!-- Text -->
                     <p class="lead text-white lh-190">
-                        Build one product from the ground up using our dedicated tools. A beautiful ecosystem built to sustain productivity and encourage developers to create modern and professional high-end products.
+                        Build one product from the ground up using our dedicated tools. A beautiful ecosystem built to
+                        sustain productivity and encourage developers to create modern and professional high-end
+                        products.
                     </p>
                 </div>
             </div>
@@ -114,7 +134,8 @@ get_header();
                             <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
                                 <div class="p-4 text-center text-sm-left">
                                     <h3 class="mb-0">
-                                        <span class="counter" data-from="0" data-to="10" data-speed="3000" data-refresh-interval="200"></span>
+                                        <span class="counter" data-from="0" data-to="10" data-speed="3000"
+                                            data-refresh-interval="200"></span>
                                         <span class="counter-extra">k</span>
                                     </h3>
                                     <p class="text-muted mb-0">
@@ -127,7 +148,8 @@ get_header();
                             <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
                                 <div class="p-4 text-center text-sm-left">
                                     <h3 class="mb-0">
-                                        <span class="counter" data-from="0" data-to="53" data-speed="3000" data-refresh-interval="200"></span>
+                                        <span class="counter" data-from="0" data-to="53" data-speed="3000"
+                                            data-refresh-interval="200"></span>
                                         <span class="counter-extra">k</span>
                                     </h3>
                                     <p class="text-muted mb-0">
@@ -140,7 +162,8 @@ get_header();
                             <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
                                 <div class="p-4 text-center text-sm-left">
                                     <h3 class="mb-0">
-                                        <span class="counter" data-from="0" data-to="98" data-speed="3000" data-refresh-interval="200"></span>
+                                        <span class="counter" data-from="0" data-to="98" data-speed="3000"
+                                            data-refresh-interval="200"></span>
                                         <span class="counter-extra">%</span>
                                     </h3>
                                     <p class="text-muted mb-0">
@@ -167,7 +190,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-1.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-1.jpg'); ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -180,7 +204,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-2.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-2.jpg') ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -193,7 +218,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-3.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-3.jpg'); ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -206,7 +232,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-4.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-4.jpg'); ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -221,7 +248,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-5.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-5.jpg'); ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -234,7 +262,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-6.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-6.jpg'); ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -247,7 +276,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-7.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-7.jpg'); ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -260,7 +290,8 @@ get_header();
                     <div data-animate-hover="2">
                         <div class="animate-this">
                             <a href="#">
-                                <img alt="Image placeholder" class="img-fluid rounded shadow" src="../../assets/img/theme/light/person-8.jpg">
+                                <img alt="Image placeholder" class="img-fluid rounded shadow"
+                                    src="<?php echo get_theme_file_uri('/src/assets/img/theme/light/person-8.jpg'); ?>">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -272,5 +303,5 @@ get_header();
             </div>
         </div>
     </section>
-
+</main>
 <?php get_footer(); ?>

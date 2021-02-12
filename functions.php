@@ -1,6 +1,15 @@
 <?php
 
+namespace QuickTheme;
 
+// require_once( __DIR__ . '/includes/actions.php');
+
+$files = new \FilesystemIterator( __DIR__.'/includes', \FilesystemIterator::SKIP_DOTS );
+foreach ( $files as $file )
+{
+    /** @noinspection PhpIncludeInspection */
+    ! $files->isDir() and include $files->getRealPath();
+}
 
 //Setup variables
 // function mytheme_customize_register( $wp_customize ) {
@@ -20,31 +29,24 @@
 // }
 // add_action( 'customize_register', 'mytheme_customize_register' );
 
+// Print into error log function
+if (!function_exists('write_log')) {
 
-// Custom logo in WP theme editor
-function mytheme_setup() {
-    add_theme_support('custom-logo');
+    function write_log($log) {
+        if (true === WP_DEBUG) {
+            if (is_array($log) || is_object($log)) {
+                error_log(print_r($log, true));
+            } else {
+                error_log($log);
+            }
+        }
+    }
+
 }
-
-add_image_size('mytheme-logo', 160, 90);
-add_theme_support('custom-logo', array(
-    'size' => 'mytheme-logo'
-));
-
-add_action('after_setup_theme', 'mytheme_setup');
-
-
-// Includes
 
 
 include(get_theme_file_path('/includes/front/enqueue.php'));
-include(get_theme_file_path('/includes/setup.php'));
-include(get_theme_file_path('/includes/Navwalker.php'));
+// include(get_theme_file_path('/includes/setup.php'));
+// include(get_theme_file_path('/includes/Navwalker.php'));
 
-
-
-// Hooks
-add_action('wp_enqueue_scripts', 'enqueue');
-add_action('after_setup_theme', 'register_nav', 0);
-add_action('admin_init', 'theme_editor_styles');
 setup();
