@@ -49,4 +49,11 @@ include(get_theme_file_path('/includes/front/enqueue.php'));
 // include(get_theme_file_path('/includes/setup.php'));
 // include(get_theme_file_path('/includes/Navwalker.php'));
 
+// function user_styles(){
+//     wp_enqueue_style('style', get_theme_file_uri() . '/src/assets/libs/@fortawesome/fontawesome-free/css/all.min.css'  );
+// };
+add_action('wp_enqueue_scripts','enqueue');
+
+// enqueue();
+theme_editor_styles();
 setup();
