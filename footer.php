@@ -130,7 +130,6 @@
     <?php wp_footer(); ?>
 
 </footer>
-<!-- End of Footer -->
 </body>
 
 </html>
