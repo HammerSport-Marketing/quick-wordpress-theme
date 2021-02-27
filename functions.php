@@ -44,11 +44,6 @@ if (!function_exists('write_log')) {
 
 }
 
-// Automatic post excerpts
-add_action('auto_excerpts', function(){
-    add_post_type_support( 'page', 'excerpt' );
-});
-
 
 include(get_theme_file_path('/includes/front/enqueue.php'));
 // include(get_theme_file_path('/includes/setup.php'));
