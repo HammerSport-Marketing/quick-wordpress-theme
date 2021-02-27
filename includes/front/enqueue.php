@@ -1,4 +1,13 @@
 <?php
+/*
+ * Notice: Please it's important to keep in mind that
+ * Enqueuing order matters. 
+ * For example, enqueuing theme js before jQuery will result in
+ * error cause jQuery has not been declared at the point where theme.js
+ * is trying to use it!
+ * 
+ * The order is consistent with original HTML theme
+*/
 
 function enqueue()
 {
