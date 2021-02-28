@@ -26,7 +26,7 @@
                                 </span>
                                 <span class="btn-inner--text">Documentation</span>
                             </a>
-                            <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/"
+                            <a href=""
                                 class="btn btn-primary my-2 ml-0 ml-sm-3" target="_blank">
                                 Purchase now
                             </a>
@@ -49,22 +49,22 @@
                     <!-- Social -->
                     <ul class="nav mt-4">
                         <li class="nav-item">
-                            <a class="nav-link pl-0" href="https://dribbble.com/webpixels" target="_blank">
+                            <a class="nav-link pl-0" href="" target="_blank">
                                 <i class="fab fa-dribbble"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/webpixels" target="_blank">
+                            <a class="nav-link" href="https://github.com/hammersport-marketing" target="_blank">
                                 <i class="fab fa-github"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.instagram.com/webpxs" target="_blank">
+                            <a class="nav-link" href="https://www.instagram.com/hammersport_marketing" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
+                            <a class="nav-link" href="https://www.facebook.com/hammersportmarketing" target="_blank">
                                 <i class="fab fa-facebook"></i>
                             </a>
                         </li>
