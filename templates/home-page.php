@@ -116,6 +116,7 @@ get_header(); ?>
                     <h3 class="display-4 lh-130">
                         <?php the_sub_field('heading_text'); ?>
                     </h3>
+                    <p class="text-center"><?php the_sub_field('statement'); ?></p>
                     <p class="text-center"><?php the_sub_field('description'); ?></p>
                 </div>
             </div>
