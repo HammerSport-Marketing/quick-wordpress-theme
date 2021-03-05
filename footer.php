@@ -28,15 +28,12 @@
                             </p>
                         </div>
                         <div class="col-lg-5 text-lg-right mt-4 mt-lg-0">
-                            <a href="docs/index.html" class="btn btn-white btn-icon my-2" target="_blank">
-                                <span class="btn-inner--icon">
-                                    <i data-feather="book" class="text-primary"></i>
-                                </span>
-                                <span class="btn-inner--text">Documentation</span>
+                            <a href="<?php echo get_theme_mod('footer_button_1_url'); ?>" class="btn btn-white btn-icon my-2" target="_blank">
+                                <span class="btn-inner--text"><?php echo get_theme_mod('footer_button_1_text'); ?></span>
                             </a>
-                            <a href=""
+                            <a href="<?php echo get_theme_mod('footer_button_2_url'); ?>"
                                 class="btn btn-primary my-2 ml-0 ml-sm-3" target="_blank">
-                                Purchase now
+                                <?php echo get_theme_mod('footer_button_2_text'); ?>
                             </a>
                         </div>
                     </div>
@@ -57,23 +54,23 @@
                     <!-- Social -->
                     <ul class="nav mt-4">
                         <li class="nav-item">
-                            <a class="nav-link pl-0" href="" target="_blank">
-                                <i class="fab fa-dribbble"></i>
+                            <a class="nav-link pl-0" href="<?php echo get_theme_mod('footer_social_url_1') ?>" target="_blank">
+                                <i class="fab <?php echo get_theme_mod('o2_fa_icon_picker_1'); ?>"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/hammersport-marketing" target="_blank">
-                                <i class="fab fa-github"></i>
+                            <a class="nav-link" href="<?php echo get_theme_mod('footer_social_url_2') ?>" target="_blank">
+                                <i class="fab <?php echo get_theme_mod('o2_fa_icon_picker_2'); ?>"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.instagram.com/hammersport_marketing" target="_blank">
-                                <i class="fab fa-instagram"></i>
+                            <a class="nav-link" href="<?php echo get_theme_mod('footer_social_url_3') ?>" target="_blank">
+                                <i class="fab <?php echo get_theme_mod('o2_fa_icon_picker_3'); ?>"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.facebook.com/hammersportmarketing" target="_blank">
-                                <i class="fab fa-facebook"></i>
+                            <a class="nav-link" href="<?php echo get_theme_mod('footer_social_url_4') ?>" target="_blank">
+                                <i class="fab <?php echo get_theme_mod('o2_fa_icon_picker_4'); ?>"></i>
                             </a>
                         </li>
                     </ul>
@@ -100,28 +97,11 @@
             <div class="row align-items-center justify-content-md-between pb-4">
                 <div class="col-md-6">
                     <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                        &copy; 2020 <a href="https://webpixels.io" class="font-weight-bold"
-                            target="_blank">Webpixels</a>. All rights reserved
+                        <?php echo get_theme_mod('footer_copyright_text'); ?>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Terms
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Privacy
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Cookies
-                            </a>
-                        </li>
-                    </ul>
+                    <?php echo get_horizontal_footer_menu('horizontal-footer-menu'); ?>
                 </div>
             </div>
         </div>

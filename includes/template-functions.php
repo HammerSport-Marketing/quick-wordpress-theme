@@ -23,4 +23,26 @@ function get_footer_menu($menu_slug){
     }
     return $menu_heading.$menu_list;
 }
+
+// Retrieve horizontal footer menu
+function get_horizontal_footer_menu($menu_slug){
+    $locations = get_nav_menu_locations();
+    $menu_list = '';
+    
+    if (  $locations && isset( $locations[ $menu_slug ] ) ) {
+        $menu = wp_get_nav_menu_object( $locations[ $menu_slug ] );
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        // Set menu
+        $menu_list = '<ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0" id="menu-'.$menu_slug.'">';
+        foreach ( (array) $menu_items as $key => $menu_item ) {
+            $title = $menu_item->title;
+            $url = $menu_item->url;
+            $menu_list .= '<li class="nav-item"><a class="nav-link" href="' . $url . '">' . $title . '</a></li>';
+        }
+        $menu_list .= '</ul>';
+    } else {
+        $menu_list = '<ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0"><li>Menu "' . $menu_slug . '" not defined.</li></ul>';
+    }
+    return $menu_list;
+}
 ?>
