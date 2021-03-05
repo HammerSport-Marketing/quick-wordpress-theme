@@ -18,7 +18,7 @@ add_theme_support('custom-logo', array(
 // Custom logo in WP theme editor
 function mytheme_setup() {
     add_theme_support('custom-logo');
-}
+};
 add_image_size('mytheme-logo', 160, 90);
 add_theme_support('custom-logo', array(
     'size' => 'mytheme-logo'

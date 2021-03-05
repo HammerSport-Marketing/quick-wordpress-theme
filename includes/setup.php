@@ -90,9 +90,85 @@ function setup()
 
     // Add support for full and wide align images.
     add_theme_support('align-wide');
-}
+};
 
 function register_nav()
 {
     register_nav_menu('primary', __('Primary Menu', 'quick-ui'));
-}
+};
+
+function themeslug_customize_register( $wp_customize ) {
+
+    // Add a setting 
+    $wp_customize->add_setting('your_theme_secondary_logo');
+    // Add a control to upload the hover logo
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'your_theme_secondary_logo', array(
+        'label' => 'Upload Secondary Logo',
+        'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+        'settings' => 'your_theme_secondary_logo',
+        'priority' => 8 // show it just below the custom-logo
+    )));
+
+    $wp_customize->add_panel('footer',array(
+        'title'=>'Footer Options',
+        'description'=> 'Configure your footer',
+        'priority'=> 4,
+    ));
+    
+    // Headline section configuration
+    $wp_customize->add_section('footer_headline',array(
+        'title'=>'Headline',
+        'priority'=>10,
+        'panel'=>'footer',
+    ));
+    
+    // Title
+
+    $wp_customize->add_setting('footer_headline_title',array(
+        'default'=>'Brilliant solutions for your ideas',
+        'type' => 'theme_mod',
+    ));
+    
+    $wp_customize->add_control('control_footer_headline_title',array(
+        'label'=>'Title',
+        'type'=>'text',
+        'section'=>'footer_headline',
+        'settings'=>'footer_headline_title',
+    ));
+
+    // Subtitle
+
+    $wp_customize->add_setting('footer_headline_subtitle',array(
+        'default'=>'Build modern looking websites fast and easy using Quick.',
+        'type' => 'theme_mod',
+    ));
+    
+    $wp_customize->add_control('control_footer_headline_subtitle',array(
+        'label'=>'Subtitle',
+        'type'=>'text',
+        'section'=>'footer_headline',
+        'settings'=>'footer_headline_subtitle',
+    ));
+
+    // Mission
+
+    $wp_customize->add_section('footer_mission',array(
+        'title'=>'Mission',
+        'priority'=>10,
+        'panel'=>'footer',
+    ));
+
+    $wp_customize->add_setting('footer_company_mission',array(
+        'default'=> 'Webpixels attempts to bring the best development
+        experience to designers and developers by offering the tools needed for having a quick and
+        solid start in most web projects.',
+        'type' => 'theme_mod',
+    ));
+    
+    $wp_customize->add_control('control_footer_company_mission',array(
+        'label'=>'Subtitle',
+        'type'=>'text',
+        'section'=>'footer_mission',
+        'settings'=>'footer_company_mission',
+    ));
+};

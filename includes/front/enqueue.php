@@ -45,7 +45,7 @@ function enqueue()
     // Enqueue Theme JS
     wp_enqueue_script('scripts', $uri . '/assets/js/quick-website.js');
 
-}
+};
 
 function theme_editor_styles()
 {
@@ -54,4 +54,5 @@ function theme_editor_styles()
     add_theme_support('editor-styles');
     add_theme_support( 'post-thumbnails' );
     add_editor_style( 'style-editor.css' );
-}
+};
+
