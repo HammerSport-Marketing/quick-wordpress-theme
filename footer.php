@@ -1,3 +1,5 @@
+
+
 <footer class="position-relative" id="footer-main">
     <div class="footer pt-lg-7 footer-dark bg-dark">
         <!-- SVG shape -->
@@ -14,9 +16,15 @@
                 <div class="col-lg-12">
                     <div class="row align-items-center">
                         <div class="col-lg-7">
-                            <h3 class="text-secondary mb-2">Brilliant solutions for your ideas</h3>
+                            <h3 class="text-secondary mb-2">
+                                <?php
+                                    echo get_theme_mod('footer_headline_title');
+                                ?>
+                            </h3>
                             <p class="lead mb-0 text-white opacity-8">
-                                Build modern looking websites fast and easy using Quick.
+                                <?php
+                                    echo get_theme_mod('footer_headline_subtitle');
+                                ?>
                             </p>
                         </div>
                         <div class="col-lg-5 text-lg-right mt-4 mt-lg-0">
@@ -40,12 +48,12 @@
                     <!-- Theme's logo -->
                     <a href="index.html">
                         <img alt="Image placeholder"
-                            src="<?php echo get_theme_file_uri('/src/assets/img/brand/light.svg'); ?>" id="footer-logo">
+                            src="<?php echo get_theme_mod( 'your_theme_secondary_logo' ); ?>" id="footer-logo">
                     </a>
-                    <!-- Webpixels' mission -->
-                    <p class="mt-4 text-sm opacity-8 pr-lg-4">Webpixels attempts to bring the best development
-                        experience to designers and developers by offering the tools needed for having a quick and
-                        solid start in most web projects.</p>
+                    <!-- Company's mission -->
+                    <p class="mt-4 text-sm opacity-8 pr-lg-4">
+                        <?php echo get_theme_mod( 'footer_company_mission' ); ?>
+                    </p>
                     <!-- Social -->
                     <ul class="nav mt-4">
                         <li class="nav-item">
@@ -70,31 +78,22 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-                    <h6 class="heading mb-3">Account</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Billing</a></li>
-                        <li><a href="#">Notifications</a></li>
-                    </ul>
+                    <!-- Menu 1 -->
+                    <?php
+                        echo get_footer_menu('footer-menu-1');
+                    ?>
                 </div>
                 <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                    <h6 class="heading mb-3">About</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
+                    <?php
+                        echo get_footer_menu('footer-menu-2');
+                    ?>
                 </div>
                 <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                    <h6 class="heading mb-3">Company</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Help center</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
+                    <?php
+                        echo get_footer_menu('footer-menu-3');
+                    ?>
                 </div>
             </div>
             <hr class="divider divider-fade divider-dark my-4">
