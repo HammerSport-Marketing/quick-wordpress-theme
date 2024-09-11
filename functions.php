@@ -12,6 +12,16 @@ foreach ( $files as $file )
 };
 
 /**
+ * O2 library for include icon picker in theme customizer
+ * source: https://github.com/HardeepAsrani/o2/tree/development/controls/icon-picker
+ */
+
+define( 'O2_DIRECTORY', get_template_directory() . '/includes/o2/' );
+define( 'O2_DIRECTORY_URI', get_template_directory_uri() . '/includes/o2/' );
+require get_template_directory() . '/includes/o2/controls/icon-picker/icon-picker-control.php';
+
+
+/**
 * Customizer additions.
 */
 require get_template_directory() . '/includes/customizer/register.php';

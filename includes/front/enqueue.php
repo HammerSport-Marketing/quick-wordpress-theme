@@ -45,6 +45,8 @@ function enqueue()
     // Enqueue Theme JS
     wp_enqueue_script('scripts', $uri . '/assets/js/quick-website.js');
 
+
+
 };
 
 function theme_editor_styles()
